@@ -1,1 +1,29 @@
 
+{% extends "base.html" %}
+{% block content %}
+<script>document.getElementById('link-about').className = 'active';</script>
+
+<section style="background: #f8fafc; text-align: center; min-height: 80vh;">
+    <span class="section-tag">📌 About Our AI System</span>
+    <h2 class="section-title">Intelligent Stroke Prediction</h2>
+    <p class="section-desc" style="margin: 0 auto 50px auto;">Our Artificial Intelligence based healthcare system analyzes medical parameters and predicts stroke risk to support early prevention and better health decisions.</p>
+
+    <div class="cards-grid" style="max-width: 1100px; margin: 0 auto;">
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">🧠</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">AI Prediction</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Machine learning algorithms analyze patient data and estimate stroke risk accurately.</p>
+        </div>
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">❤️</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">Smart Healthcare</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Provides preventive healthcare suggestions based on prediction results.</p>
+        </div>
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">🩺</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">Medical Support</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Generates understandable reports for patients and healthcare professionals.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
