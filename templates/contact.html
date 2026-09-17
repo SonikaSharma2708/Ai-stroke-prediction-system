@@ -1,1 +1,62 @@
 
+{% extends "base.html" %}
+{% block content %}
+<script>document.getElementById('link-contact').className = 'active';</script>
+
+<section style="min-height: 80vh;">
+    <div style="text-align: center; margin-bottom: 50px;">
+        <span class="section-tag">📬 Contact Us</span>
+        <h2 class="section-title">Get In Touch</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: start; max-width: 1100px; margin: 0 auto;">
+        <div>
+            <div style="margin-bottom: 30px;">
+                <div style="font-size: 24px; color: var(--primary-blue); margin-bottom: 8px;">🛡️</div>
+                <h4 style="font-size: 18px; font-weight: 800; margin: 0 0 4px 0;">AI Healthcare Support</h4>
+                <p style="font-size: 14px; color: var(--text-gray); margin: 0;">Online Stroke Prediction Assistance</p>
+            </div>
+            <div>
+                <div style="font-size: 24px; color: var(--primary-blue); margin-bottom: 8px;">✉️</div>
+                <h4 style="font-size: 18px; font-weight: 800; margin: 0 0 4px 0;">Email</h4>
+                <p style="font-size: 14px; color: var(--primary-blue); font-weight: 600; margin: 0;">support@aistroke.com</p>
+            </div>
+        </div>
+        
+        <div class="form-card" style="padding: 35px;">
+            <form id="desk-ticket-system">
+                <div class="form-input-group" style="margin-bottom: 20px;">
+                    <input type="text" id="tk_name" class="form-field-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-input-group" style="margin-bottom: 20px;">
+                    <input type="email" id="tk_email" class="form-field-control" placeholder="Your Email" required>
+                </div>
+                <div class="form-input-group" style="margin-bottom: 20px;">
+                    <textarea id="tk_msg" class="form-field-control" rows="5" style="resize: none;" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="btn-main" style="background: #0f766e; box-shadow: none; padding: 14px 35px; border-radius: 6px;">Send Message</button>
+            </form>
+            <div id="tk-alert" style="display: none; margin-top: 15px; padding: 12px; background: #f0fdf4; color: #166534; border-radius: 8px; font-weight: 700; text-align: center;">✔ Message sent successfully!</div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('desk-ticket-system').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch('/submit-query', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            name: document.getElementById('tk_name').value, 
+            email: document.getElementById('tk_email').value,
+            message: document.getElementById('tk_msg').value 
+        })
+    }).then(() => {
+        document.getElementById('tk-alert').style.display = 'block';
+        document.getElementById('desk-ticket-system').reset();
+        setTimeout(() => { document.getElementById('tk-alert').style.display = 'none'; }, 3000);
+    });
+});
+</script>
+{% endblock %}
