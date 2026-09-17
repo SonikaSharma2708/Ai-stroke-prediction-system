@@ -1,1 +1,157 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stroke Prediction Report</title>
+    <style>
+        @page {
+            size: portrait;
+            margin: 20mm;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            padding: 10px; 
+            color: #0f172a; 
+            background: #fff;
+            line-height: 1.5;
+        }
+        
+        .header { 
+            border-bottom: 2px solid #0284c7; 
+            padding-bottom: 12px; 
+            margin-bottom: 25px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        
+        .title { 
+            color: #0284c7; 
+            font-size: 24px; 
+            font-weight: bold; 
+        }
+        
+        .section-title { 
+            background: #0284c7; 
+            color: white; 
+            padding: 8px 12px; 
+            font-size: 14px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+            margin-top: 25px; 
+            text-transform: uppercase;
+        }
+        
+        .data-table { 
+            width: 100%; 
+            margin-top: 10px; 
+            border-collapse: collapse; 
+        }
+        
+        .data-table td { 
+            padding: 10px; 
+            border-bottom: 1px solid #e2e8f0; 
+            font-size: 14px; 
+        }
+        
+        .data-table td:nth-child(even) { 
+            font-weight: bold; 
+            text-align: right; 
+        }
+        
+        .score-box { 
+            border-radius: 8px; 
+            padding: 25px; 
+            text-align: center; 
+            margin-top: 20px; 
+        }
+        
+        .box-high { 
+            border: 2px solid #ef4444; 
+            background: #fdf2f2; 
+        }
+        
+        .box-low { 
+            border: 2px solid #10b981; 
+            background: #f0fdf4; 
+        }
+        
+        .score-val { 
+            font-size: 56px; 
+            font-weight: 800; 
+            margin: 8px 0; 
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-print {
+            background: #0f766e;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        @media print { 
+            .no-print { 
+                display: none; 
+            } 
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="title">🩺 AI Stroke Prediction System</div>
+        <div style="font-size: 12px; text-align: right; color: #64748b; line-height: 1.4;">
+           
+        </div>
+    </div>
+    
+    <h2 style="margin-top: 0; font-weight: 700; font-size: 22px;">Patient Health Report</h2>
+ 
+
+    <div class="section-title">Patient Details</div>
+    <table class="data-table">
+        <tr><td>Patient ID:</td><td style="font-family: monospace;">{{ patient_id }}</td><td>Gender:</td><td>{{ gender }}</td></tr>
+        <tr><td>Age:</td><td>{{ age }} Years</td><td>Average Glucose Level:</td><td>{{ glucose }} mg/dL</td></tr>
+        <tr><td>Body Mass Index (BMI):</td><td>{{ bmi }}</td><td>Hypertension History:</td><td>{{ hypertension }}</td></tr>
+    </table>
+    
+    <div class="section-title">Risk Assessment Result</div>
+    
+    {% if risk >= 45.0 %}
+    <div class="score-box box-high">
+        <div style="font-size: 20px; font-weight: 800; color: #ef4444;">🛑 HIGH RISK STATUS FLAGGED</div>
+        <div class="score-val" style="color: #ef4444;">{{ risk }}%</div>
+        <p style="color: #475569; margin: 0 auto; max-width: 550px; font-size: 14px; line-height: 1.6;"><b>Next Steps:</b> Regular health checks, blood pressure monitoring, a heart-healthy diet, and consulting a healthcare provider or doctor are highly recommended to address these metrics.</p>
+    </div>
+    {% else %}
+    <div class="score-box box-low">
+        <div style="font-size: 20px; font-weight: 800; color: #10b981;">✔ LOW RISK DECLARED</div>
+        <div class="score-val" style="color: #10b981;">{{ risk }}%</div>
+        <p style="color: #475569; margin: 0 auto; max-width: 550px; font-size: 14px; line-height: 1.6;"><b>Next Steps:</b> Patient biometrics sit well within normal clinical limits. Continue prioritizing a balanced diet, consistent daily physical routines, and active wellness habit tracking.</p>
+    </div>
+    {% endif %}
+    
+    <div class="btn-container no-print">
+        <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <div class="footer" style="margin-top: 60px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 15px;">
+        Stay Healthy, Stay Safe! ❤️ | Automated Core Machine Learning Systems Unit
+    </div>
+</body>
+</html>
