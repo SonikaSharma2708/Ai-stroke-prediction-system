@@ -1,1 +1,29 @@
 
+{% extends "base.html" %}
+{% block content %}
+<script>document.getElementById('link-services').className = 'active';</script>
+
+<section style="text-align: center; min-height: 80vh;">
+    <span class="section-tag">💼 Our Services</span>
+    <h2 class="section-title">AI Powered Healthcare Services</h2>
+    <p class="section-desc" style="margin: 0 auto 50px auto;">Explore our intelligent healthcare services designed for early stroke prediction and prevention.</p>
+
+    <div class="cards-grid" style="max-width: 1100px; margin: 0 auto;">
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">🧠</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">Stroke Prediction</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Our machine learning model evaluates patient health parameters and predicts possible stroke risk.</p>
+        </div>
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">📄</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">Medical Reports</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Generate professional prediction reports containing patient details and risk analysis.</p>
+        </div>
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">💡</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">Health Recommendations</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Receive lifestyle suggestions based on predicted stroke risk level.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
