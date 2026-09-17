@@ -1,1 +1,141 @@
+{% extends "base.html" %}
+{% block content %}
+<script>document.getElementById('link-home').className = 'active';</script>
 
+<!-- HERO BLOCK -->
+<section id="home" class="hero-section">
+    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;">
+        <div>
+            <span class="section-tag">🧠 AI Powered Healthcare Platform</span>
+            <h1 style="font-size: 56px; font-weight: 900; line-height: 1.1; margin: 0 0 25px 0; letter-spacing: -1.5px;">Predict Stroke Risk <br><span style="background: var(--grad-blue-cyan); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Before It's Too Late</span></h1>
+            <p class="section-desc">Our Artificial Intelligence based healthcare platform analyzes patient medical information and predicts stroke risk within seconds while providing personalized health recommendations.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="/predict" class="btn-main">🩺Check Stroke Risk</a>
+                <a href="/about" class="btn-outline">Learn More</a>
+            </div>
+        </div>
+        <!-- TOP IMAGE: Now using doctor.png as well -->
+        <div style="text-align: right;">
+            <img src="{{ url_for('static', filename='images/doctor.png') }}" alt="AI Healthcare Concept Dashboard" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); filter: drop-shadow(0 20px 40px rgba(0,0,0,0.06));">
+        </div>
+    </div>
+
+    <!-- 4 Enlarged Bottom Stats Blocks -->
+    <div class="cards-grid" style="margin-top: 80px;">
+        <div class="stat-box-card">
+            <div style="font-size: 40px; margin-bottom: 10px;">🧠</div>
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Prediction Accuracy</div>
+        </div>
+        <div class="stat-box-card">
+            <div style="font-size: 40px; margin-bottom: 10px;">👨‍⚕️</div>
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Patients Supported</div>
+        </div>
+        <div class="stat-box-card">
+            <div style="font-size: 40px; margin-bottom: 10px;">⚡</div>
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">AI Monitoring</div>
+        </div>
+        <div class="stat-box-card">
+            <div style="font-size: 40px; margin-bottom: 10px;">📄</div>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Digital Reports</div>
+        </div>
+    </div>
+</section>
+
+<!-- MODULE 1: WHY CHOOSE US -->
+<section style="background: #f8fafc; border-top: 1px solid var(--border-color); text-align: center;">
+    <span class="section-tag">✨ Why Choose Us</span>
+    <h2 class="section-title">Smarter Healthcare Through AI</h2>
+    <p class="section-desc" style="margin: 0 auto 50px auto;">Experience fast, intelligent and reliable stroke risk prediction with advanced Machine Learning technology.</p>
+
+    <div class="cards-grid">
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">🧠</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">AI Prediction</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Advanced machine learning model predicts stroke risk in seconds.</p>
+        </div>
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">❤️</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">Health Analysis</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Smart analysis using patient medical parameters.</p>
+        </div>
+        <div class="stat-box-card" style="background: white; border-radius: 20px; padding: 40px 25px;">
+            <div style="background: var(--grad-blue-cyan); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px auto; color: white;">📄</div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 12px 0;">Medical Report</h4>
+            <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6; margin: 0;">Download beautiful AI-generated PDF health reports instantly.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MODULE 2: HOW IT WORKS -->
+<section style="border-top: 1px solid var(--border-color);">
+    <div style="text-align: center;">
+        <span class="section-tag">⚙ How It Works</span>
+        <h2 class="section-title">Simple • Smart • Secure</h2>
+        <p class="section-desc" style="margin: 0 auto 60px auto;">Our AI system predicts stroke risk in just three simple steps while ensuring your medical information remains secure.</p>
+    </div>
+
+    <div class="cards-grid">
+        <div class="stat-box-card" style="position: relative; text-align: left; padding: 40px;">
+            <div class="step-number-glow">01</div>
+            <div style="background: #eff6ff; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--primary-blue); font-weight: 800; margin-bottom: 25px;">👤</div>
+            <h4 style="font-size: 20px; margin: 0 0 10px 0; font-weight: 800;">Enter Details</h4>
+            <p style="font-size: 15px; color: var(--text-gray); line-height: 1.6; margin: 0;">Fill in your health information such as age, BMI, glucose level, hypertension and smoking status.</p>
+        </div>
+        <div class="stat-box-card" style="position: relative; text-align: left; padding: 40px;">
+            <div class="step-number-glow">02</div>
+            <div style="background: #eff6ff; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--primary-blue); font-weight: 800; margin-bottom: 25px;">🧠</div>
+            <h4 style="font-size: 20px; margin: 0 0 10px 0; font-weight: 800;">AI Analysis</h4>
+            <p style="font-size: 15px; color: var(--text-gray); line-height: 1.6; margin: 0;">Our Machine Learning model instantly analyzes your medical information and estimates stroke probability.</p>
+        </div>
+        <div class="stat-box-card" style="position: relative; text-align: left; padding: 40px;">
+            <div class="step-number-glow">03</div>
+            <div style="background: #eff6ff; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--primary-blue); font-weight: 800; margin-bottom: 25px;">📄</div>
+            <h4 style="font-size: 20px; margin: 0 0 10px 0; font-weight: 800;">Get Report</h4>
+            <p style="font-size: 15px; color: var(--text-gray); line-height: 1.6; margin: 0;">View your prediction result and download a beautifully formatted medical report with health recommendations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MODULE 3: NEXT GENERATION AI SIDEBAR PANEL -->
+<section style="background: #f8fafc; border-top: 1px solid var(--border-color);">
+    <div style="display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 50px; align-items: center;">
+        <!-- BOTTOM IMAGE: Uses doctor.png flipped perfectly for layout symmetry -->
+        <div>
+            <img src="{{ url_for('static', filename='images/doctor.png') }}" alt="Professional Medical Personnel illustration" style="max-width: 95%; height: auto; border-radius: var(--radius-md); transform: scaleX(-1); filter: drop-shadow(0 15px 30px rgba(0,0,0,0.05));">
+        </div>
+        <div>
+            <span class="section-tag">🚀 Next Generation AI</span>
+            <h2 class="section-title">AI Driven Healthcare <br>For Better Prevention</h2>
+            <p class="section-desc" style="margin-bottom: 35px;">We combine Artificial Intelligence with modern healthcare practices to help identify stroke risks earlier and encourage healthier lifestyles.</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                    <div style="background: #2563eb; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; font-weight: 700;">✓</div>
+                    <div><b style="font-size: 18px; color: var(--text-dark);">Fast Prediction</b><p style="margin: 4px 0 0 0; font-size: 15px; color: var(--text-gray);">Get prediction within seconds.</p></div>
+                </div>
+                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                    <div style="background: #06b6d4; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; font-weight: 700;">🩺</div>
+                    <div><b style="font-size: 18px; color: var(--text-dark);">Personalized Tips</b><p style="margin: 4px 0 0 0; font-size: 15px; color: var(--text-gray);">Health recommendations based on your prediction.</p></div>
+                </div>
+                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                    <div style="background: #0284c7; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; font-weight: 700;">🔒</div>
+                    <div><b style="font-size: 18px; color: var(--text-dark);">Secure Records</b><p style="margin: 4px 0 0 0; font-size: 15px; color: var(--text-gray);">Your medical information stays protected.</p></div>
+                </div>
+                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                    <div style="background: #a855f7; color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; font-weight: 700;">📊</div>
+                    <div><b style="font-size: 18px; color: var(--text-dark);">Download Reports</b><p style="margin: 4px 0 0 0; font-size: 15px; color: var(--text-gray);">Professional PDF reports ready for download.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div style="background: #0f172a; padding: 40px 8%; color: #94a3b8; text-align: center; font-size: 14px; font-weight: 500;">
+    ❤️ Your Health Is Our Priority. Take a proactive step toward better health with our AI-powered Stroke Prediction System.
+</div>
+{% endblock %}
