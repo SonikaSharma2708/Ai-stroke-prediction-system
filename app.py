@@ -10,7 +10,7 @@ MODEL_PATH = os.path.join('model', 'stroke_model.pkl')
 ENCODER_PATH = os.path.join('model', 'encoders.pkl')
 
 # Your Render website URL
-BASE_URL = "https://ai-stroke-prediction-system-jj8s.onrender.com"
+BASE_URL = "https://ai-stroke-prediction-system1.onrender.com"
 
 
 def load_ml_assets():
